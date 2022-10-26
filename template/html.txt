@@ -1,0 +1,18 @@
+  <!DOCTYPE html>
+  <html lang='en' dir='ltr'>
+    <head>
+      <meta charset='utf-8'>
+      <title></title>
+      <link rel='stylesheet' href='css/style.css'>
+    </head>
+    <body>
+        <div class="container">
+<h1>404</h1>
+<h2>La page est Morte </h2>
+<p>La page a eu une longue vie de bonheur jusqu'à la fin</p>
+<p><a href="https://www.life.com/">Re-vivre</a></p>
+</div>
+
+    <script type='text/javascript' src='scrpts/script.js'></script>
+    </body>
+  </html>
