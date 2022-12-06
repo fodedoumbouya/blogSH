@@ -8,4 +8,4 @@ projectName=$1
   touch $projectName/"index.html"
   touch $projectName/css/"style.css"
 
-  exec sh ./scripts/createProject.sh $projectName
+  exec sh ./scripts/generateFile.sh $projectName
