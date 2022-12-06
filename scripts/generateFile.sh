@@ -7,17 +7,25 @@ indexImage=$projectName/images/
 
 
 #----------------------------------------
-  htmlTemplate="`cat ./template/html.txt`"
-  # cssTemplate="`cat ./template/style.txt`"
+  htmlTemplate1="`cat ./template/html1.txt`"
+  htmlTemplatefillUpImages="`cat ./template/fillUpImages.txt`"
+  htmlTemplate2="`cat ./template/html2.txt`"
+
+  cssTemplate="`cat ./template/style.txt`"
 
 #-----------------------------------------
 #Fill up of index file from the template
-echo $htmlTemplate > $indexFile
+
+echo $htmlTemplate1 >>  $indexFile
+echo $htmlTemplatefillUpImages >>  $indexFile
+echo $htmlTemplate2 >>  $indexFile
+
+echo $cssTemplate > $indexCss
+
 
 # Copie des images dans le dossier du project
 echo "`cp -r ./images/* "./$projectName/images/"`"
 
 
-# echo $cssTemplate > $indexCss
 #Message sucess
 echo "Congratulations! Ton project est prete"
