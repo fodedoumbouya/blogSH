@@ -1,1 +1,6 @@
-<img class="image" src="images/1.jpg">
+<img class='image' src='./images/1.jpg' alt=''/>
+<br>
+<img class='image' src='./images/2.jpg' alt=''/>
+<br>
+<img class='image' src='./images/3.jpg' alt=''/>
+<br>
