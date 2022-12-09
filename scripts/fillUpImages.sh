@@ -8,13 +8,16 @@ LISTE_IMAGES=($(ls $PATH_IMAGES))
 # rm -f  ./template/fillUpImages.txt
 touch ./template/fillUpImages.txt
 
-for image in "${LISTE_IMAGES[@]}"
+for image in "${!LISTE_IMAGES[@]}"
 do
-   echo "<img class='image' src='$PATH_IMAGES/$image' alt=''/>" >> ./template/fillUpImages.txt
-   echo "<br>" >> ./template/fillUpImages.txt
-
+    if [ $image == 0 ]
+    then
+        echo "<img class='image' src='$PATH_IMAGES/${LISTE_IMAGES[$image]}' alt=''/>" > ./template/fillUpImages.txt
+    else
+        echo "<img class='image' src='$PATH_IMAGES/${LISTE_IMAGES[$image]}' alt=''/>" >> ./template/fillUpImages.txt
+    fi
+    
+    echo "<br>" >> ./template/fillUpImages.txt
 done
 
-
 exec sh ./scripts/generateFile.sh $projectName
-
