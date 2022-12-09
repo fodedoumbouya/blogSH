@@ -30,4 +30,4 @@ echo "`cp -r ./images/* "./$projectName/images/"`"
 #Message sucess
 echo "Congratulations! Ton project est prete"
 
-echo `open -a "Google Chrome" $projectName/index.html`
+echo `open  $projectName/index.html`
