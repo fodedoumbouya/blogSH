@@ -19,4 +19,4 @@ do
     echo "<br>" >> ./template/fillUpImages.txt
 done
 
-exec sh ./scripts/generateFile.sh $projectName
+exec bash ./scripts/generateFile.sh $projectName

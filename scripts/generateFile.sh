@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 projectName=$1
 
 indexFile=$projectName/"index.html"

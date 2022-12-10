@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 projectName=$1
 targetDirectory=$2
 
@@ -9,4 +9,4 @@ targetDirectory=$2
   touch $targetDirectory/$projectName/"index.html"
   touch $targetDirectory/$projectName/css/"style.css"
 
-  exec ./scripts/fillUpImages.sh ./images $targetDirectory/$projectName
+  exec bash ./scripts/fillUpImages.sh ./images $targetDirectory/$projectName

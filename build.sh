@@ -4,7 +4,6 @@ projectName=$1
 targetDirectory=$2
 
 createProject() {
-  echo "${targetDirectory}/${projectName}"
   if [[ -d "${targetDirectory}/${projectName}" ]]
     then
       while true; do
@@ -14,14 +13,14 @@ createProject() {
       case $yn in
         [Yy]* )
           echo "`rm -rf ${targetDirectory}/${projectName}`"
-          exec sh ./scripts/createDirectory.sh $projectName $targetDirectory
+          exec bash ./scripts/createDirectory.sh $projectName $targetDirectory
         break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
   done
     else
-      exec sh ./scripts/createDirectory.sh $projectName $targetDirectory
+      exec bash ./scripts/createDirectory.sh $projectName $targetDirectory
   fi
 }
 
