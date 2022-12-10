@@ -1,11 +1,12 @@
 #!/bin/sh
 projectName=$1
+targetDirectory=$2
 
-  mkdir $projectName
-  mkdir $projectName/css
-  mkdir $projectName/images
+  mkdir $targetDirectory/$projectName
+  mkdir $targetDirectory/$projectName/css
+  mkdir $targetDirectory/$projectName/images
 
-  touch $projectName/"index.html"
-  touch $projectName/css/"style.css"
+  touch $targetDirectory/$projectName/"index.html"
+  touch $targetDirectory/$projectName/css/"style.css"
 
-  exec sh ./scripts/fillUpImages.sh ./images $projectName
+  exec sh ./scripts/fillUpImages.sh ./images $targetDirectory/$projectName
