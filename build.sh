@@ -3,7 +3,7 @@
 projectName=$1
 targetDirectory=$2
 
-function createProject() {
+createProject() {
   echo "${targetDirectory}/${projectName}"
   if [[ -d "${targetDirectory}/${projectName}" ]]
     then
@@ -25,7 +25,7 @@ function createProject() {
   fi
 }
 
-function isTargetDestinationExist() {
+isTargetDestinationExist() {
   if [[ -d ${targetDirectory} ]]
     then
       return 0
@@ -35,7 +35,7 @@ function isTargetDestinationExist() {
   fi
 }
 
-function isWritePermission(){
+isWritePermission(){
 
   if [[ ! -w ${targetDirectory} ]]
   then
@@ -47,7 +47,7 @@ function isWritePermission(){
 }
 
 
-function main() {
+main() {
   if isTargetDestinationExist;
     then
 
