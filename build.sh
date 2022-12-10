@@ -1,25 +1,50 @@
 #!/bin/sh
 
 projectName=$1
+targetDirectory=$2
 
-if [[ -d $projectName ]]
-then
+function createProject() {
+  cd $targetDirectory
 
-  while true; do
+  if [[ -d ${projectName} ]]
+    then
+      while true; do
 
-    read -p "This directory $projectName is exist already in your current directory. Do you want to override this directory ? (yes/no)" yn
+      read -p "This directory $projectName is exist already in directory '$targetDirectory'. Are you sure that yo want to override this directory ? (yes/no)" yn
 
-    case $yn in
+      case $yn in
         [Yy]* )
           echo "`rm -rf $projectName`"
-          exec  sh ./scripts/createDirectory.sh "$projectName"
-          echo "This directory has been overwritten." ;
+          exec sh ./scripts/createDirectory.sh $projectName $targetDirectory
         break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
   done
+    else
+      echo "The project don't exist"
+      exec sh ./scripts/createDirectory.sh $projectName $targetDirectory
+  fi
+}
 
-else
-  exec sh ./scripts/createDirectory.sh $projectName
-fi
+function isWritePermission(){
+  echo "$targetDirectory"
+  if [[ ! -w ${targetDirectory} ]]
+  then
+    return 1
+  else
+    return 0
+  fi
+}
+
+
+function main() {
+  if isWritePermission;
+    then
+      isProjectExist
+  else
+     echo "You can't create the project into this directory '$targetDirectory' because of write permissions. Please check and try again. "
+  fi
+}
+
+main
