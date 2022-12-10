@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 projectName=$1
 targetDirectory=$2
@@ -58,4 +58,20 @@ function main() {
   fi
 }
 
-main
+function help(){
+  cat ./README.md
+}
+
+function debug(){
+    echo "debug";
+}
+
+
+if [ "$1" = "--help" ]; then
+    help
+elif [ "$1" = "--debug" ]; then
+    debug
+else
+    main
+    break
+fi
