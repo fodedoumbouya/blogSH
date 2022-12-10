@@ -15,12 +15,7 @@ createProject() {
           echo "`rm -rf ${targetDirectory}/${projectName}`"
           exec bash ./scripts/createDirectory.sh $projectName $targetDirectory
         break;;
-        [Nn]* ) 
-          exit;;
-        "") 
-          echo "`rm -rf ${targetDirectory}/${projectName}`"
-          exec bash ./scripts/createDirectory.sh $projectName $targetDirectory
-          exit;;
+        [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
   done
