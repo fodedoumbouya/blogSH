@@ -16,7 +16,6 @@ createProject() {
           exec bash ./scripts/createDirectory.sh $projectName $targetDirectory
         break;;
         [Nn]* ) 
-          echo "Creation de projet echouee !"
           exit;;
         "") 
           echo "`rm -rf ${targetDirectory}/${projectName}`"
