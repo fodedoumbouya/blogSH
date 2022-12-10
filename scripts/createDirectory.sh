@@ -9,4 +9,4 @@ targetDirectory=$2
   touch $targetDirectory/$projectName/"index.html"
   touch $targetDirectory/$projectName/css/"style.css"
 
-  exec sh ./scripts/fillUpImages.sh ./images $targetDirectory/$projectName
+  exec ./scripts/fillUpImages.sh ./images $targetDirectory/$projectName

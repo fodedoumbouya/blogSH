@@ -5,7 +5,6 @@ projectName=$2
 
 LISTE_IMAGES=($(ls $PATH_IMAGES))
 
-# rm -f  ./template/fillUpImages.txt
 touch ./template/fillUpImages.txt
 
 for image in "${!LISTE_IMAGES[@]}"
