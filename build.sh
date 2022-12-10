@@ -4,9 +4,8 @@ projectName=$1
 targetDirectory=$2
 
 function createProject() {
-  cd $targetDirectory
-
-  if [[ -d ${projectName} ]]
+  echo "${targetDirectory}/${projectName}"
+  if [[ -d "${targetDirectory}/${projectName}" ]]
     then
       while true; do
 
@@ -14,7 +13,7 @@ function createProject() {
 
       case $yn in
         [Yy]* )
-          echo "`rm -rf $projectName`"
+          echo "`rm -rf ${targetDirectory}/${projectName}`"
           exec sh ./scripts/createDirectory.sh $projectName $targetDirectory
         break;;
         [Nn]* ) exit;;
@@ -22,15 +21,25 @@ function createProject() {
     esac
   done
     else
-      echo "The project don't exist"
       exec sh ./scripts/createDirectory.sh $projectName $targetDirectory
   fi
 }
 
+function isTargetDestinationExist() {
+  if [[ -d ${targetDirectory} ]]
+    then
+      return 0
+  else
+    echo "The target destination don't exist. Please check and try again"
+    return 1
+  fi
+}
+
 function isWritePermission(){
-  echo "$targetDirectory"
+
   if [[ ! -w ${targetDirectory} ]]
   then
+    echo "You can't create the project into this directory '$targetDirectory' because of write permissions. Please check and try again. "
     return 1
   else
     return 0
@@ -39,11 +48,13 @@ function isWritePermission(){
 
 
 function main() {
-  if isWritePermission;
+  if isTargetDestinationExist;
     then
-      isProjectExist
-  else
-     echo "You can't create the project into this directory '$targetDirectory' because of write permissions. Please check and try again. "
+
+      if isWritePermission
+        then
+          createProject
+      fi
   fi
 }
 
