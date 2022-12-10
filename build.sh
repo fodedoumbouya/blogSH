@@ -73,5 +73,4 @@ elif [ "$1" = "--debug" ]; then
     debug
 else
     main
-    break
 fi
