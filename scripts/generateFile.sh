@@ -6,7 +6,6 @@ indexCss=$projectName/css/"style.css"
 indexImage=$projectName/images/
 
 
-#----------------------------------------
   htmlTemplate1="`cat ./template/html1.txt`"
   htmlTemplatefillUpImages="`cat ./template/fillUpImages.txt`"
   htmlTemplate2="`cat ./template/html2.txt`"
@@ -15,12 +14,6 @@ indexImage=$projectName/images/
 
   cssTemplate="`cat ./template/style.txt`"
 
-#-----------------------------------------
-#Fill up of index file from the template
-
-# echo $htmlTemplate1 >>  $indexFile
-# echo $htmlTemplatefillUpImages >>  $indexFile
-# echo $htmlTemplate2 >>  $indexFile
 LISTE_IMAGES=($(ls images/))
 if 
 [  ${#LISTE_IMAGES[@]}  != 0  ]
@@ -38,10 +31,6 @@ echo $cssTemplate > $indexCss
 
 
 
-
-
-
-#Message sucess
 echo "Congratulations! Ton project est prete"
 
 echo `open  $projectName/index.html`
