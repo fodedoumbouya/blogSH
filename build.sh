@@ -1,5 +1,6 @@
 #!/bin/bash
 
+numberArguments=$#
 projectName=$1
 targetDirectory=$2
 
@@ -8,11 +9,11 @@ createProject() {
     then
       while true; do
 
-      read -p "This directory $projectName is exist already in directory '$targetDirectory'. Are you sure that yo want to override this directory ? (yes/no)" yn
+      read -p "This directory $projectName is already exist in directory '$targetDirectory'. Are you sure that yo want to override this directory ? (yes/no)" yn
 
       case $yn in
         [Yy]* )
-          echo "`rm -rf ${targetDirectory}/${projectName}`"
+          cmd "`rm -rf ${targetDirectory}/${projectName}`"
           exec bash ./scripts/createDirectory.sh $projectName $targetDirectory
         break;;
         [Nn]* ) exit;;
@@ -47,14 +48,21 @@ isWritePermission(){
 
 
 main() {
-  if isTargetDestinationExist;
-    then
 
-      if isWritePermission
+  if [ $numberArguments != 2 ];
+    then
+      echo "You should to have exactly two arguments. Run 'bash build.sh --help' for more information."
+    else
+      if isTargetDestinationExist;
         then
-          createProject
+
+          if isWritePermission
+            then
+              createProject
+          fi
       fi
   fi
+
 }
 
 function help(){
