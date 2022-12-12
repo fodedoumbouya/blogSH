@@ -1,0 +1,14 @@
+<!DOCTYPE html> 
+<html lang='en' dir='ltr'>
+	 <head> <meta charset='utf-8'> 
+		<title>Generate blog</title> 
+		<link rel='stylesheet' href='css/style.css'> 
+	</head>
+	 <body>
+		<div>
+			<h1 class="errorImage">
+				Votre dossier dossier image était vide
+			</h1>
+		</div>
+</body>
+ </html>

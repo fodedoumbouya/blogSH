@@ -14,3 +14,15 @@
 # echo "text.txt" | gsed -E 's/([[:digit:]]*)\./\1\nnext line/'
 # sed -i '' -e '$a\' text.
 # echo "jsnasssss1111kx" >> text.txt
+
+LISTE_IMAGES=($(ls images/))
+
+a=(1 2 3 4)
+
+# echo `"count $LISTE_IMAGES"`
+
+  if (( ${#LISTE_IMAGES[@]}  != 0 )); then
+      echo "No results for "
+  fi
+
+# echo ${#LISTE_IMAGES[@]} 
