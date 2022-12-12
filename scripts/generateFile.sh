@@ -21,7 +21,7 @@ indexImage=$projectName/images/
 # echo $htmlTemplate1 >>  $indexFile
 # echo $htmlTemplatefillUpImages >>  $indexFile
 # echo $htmlTemplate2 >>  $indexFile
-LISTE_IMAGES=($(ls $indexImage))
+LISTE_IMAGES=($(ls images/))
 if 
 [  ${#LISTE_IMAGES[@]}  != 0  ]
 then
