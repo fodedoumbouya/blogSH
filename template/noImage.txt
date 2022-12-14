@@ -7,7 +7,7 @@
 	 <body>
 		<div>
 			<h1 class="errorImage">
-				Votre dossier dossier image était vide
+				Votre dossier image était vide lors de la génération du site
 			</h1>
 		</div>
 </body>
